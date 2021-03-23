@@ -1,4 +1,4 @@
-# JSF-ile-otel-otomasyonu
+# JSF-Hotel-automation
 ![RAPOR](https://user-images.githubusercontent.com/58143573/112229393-f40b2280-8c43-11eb-8bfe-fb333b602da8.jpg)
 ![RAPOR1](https://user-images.githubusercontent.com/58143573/112229395-f4a3b900-8c43-11eb-8bdf-a721aea4362e.jpg)
 ![RAPOR3](https://user-images.githubusercontent.com/58143573/112229398-f5d4e600-8c43-11eb-9fe6-cb8fa7b6a80b.jpg)
