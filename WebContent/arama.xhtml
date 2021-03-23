@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+      <h:head>
+      <link href="./resources/css/default.css" rel="stylesheet"
+		type="text/css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+      
+      </h:head>
+
+
+<h:body>
+<h:form>
+<div class="container" style="padding:20px;">
+<div class="input-group" style=" padding:5px;  float: right;">
+				<div style="float: right;">
+							<div style="float: left;">
+							<p:inputText style="width: 200px; height:38px;" type="text"
+								aria-label="First name" class="form-control" placeholder="İsim"
+								value="#{kullaniciView.ad}" />
+						</div>
+						<div style="float: left;">
+							<p:inputText style="width: 200px; height:38px; " type="text"
+								aria-label="First name" class="form-control"
+								placeholder="Soyisim" value="#{kullaniciView.soyad}" />
+						</div>
+						</div>
+						<div style="float: right; ">
+						<h:commandButton style="margin-left:3px;" styleClass="btn btn-primary" value="ARA" />
+					</div>	
+					<div style="float: right; ">
+						<h:commandButton style="margin-left:3px;" action="#{kullaniciGirisView.Cikis()}" styleClass="btn btn-danger" value="GERI" />
+					</div>	
+				</div>
+<!-- TABLOLAR -->
+				<h:dataTable styleClass="table" value="#{kullaniciView.ara()}"
+					var="sn">
+					<f:facet name="header">Arama Sonucu</f:facet>
+					<p:column>
+						<f:facet name="header">Sil</f:facet>
+						<!-- <h:commandButton styleClass="btn btn-danger" action="#{kullaniciView.sil()}" value="x" /> -->
+						<h:commandButton styleClass="btn btn-danger" value="Sil" action="#{kullaniciView.sil()}"	 >
+						<f:setPropertyActionListener value="#{sn}" target="#{kullaniciView.kullanici}"  />
+						</h:commandButton>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Guncelle</f:facet>
+						<h:commandButton styleClass="btn btn-warning" action="#{kullaniciGirisView.Cikis()}" value="Guncelle" >
+						<f:setPropertyActionListener value="#{sn}"  target="#{kullaniciView.kullanici}"  />
+						</h:commandButton>
+						
+					</p:column>
+					<p:column>
+						<f:facet name="header">AD</f:facet>
+						<h:outputText value="#{sn.ad}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">SOYAD</f:facet>
+						<h:outputText value="#{sn.soyad}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">CINSIYET</f:facet>
+						<h:outputText value="#{sn.cinsiyet}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">TEL</f:facet>
+						<h:outputText value="#{sn.telefon}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">MAIL</f:facet>
+						<h:outputText value="#{sn.mail}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">T.C</f:facet>
+						<h:outputText value="#{sn.tc}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">GIRIS TARIHI</f:facet>
+						<h:outputText value="#{sn.girisTarihi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">CIKIS TARIHI</f:facet>
+						<h:outputText value="#{sn.cikisTarihi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">ODA</f:facet>
+						<h:outputText value="#{kullaniciView.convert(sn.oda)}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">UCRET</f:facet>
+						<h:outputText value="#{sn.ucret}" />
+					</p:column>
+				</h:dataTable>
+				
+
+
+</div>
+</h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="165,104,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#otomasyon.xhtml" NAME="output"
+    PATH="/otomasyon.xhtml" TARGET="rules:#otomasyon.xhtml" TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#otomasyon.xhtml" PATH="/otomasyon.xhtml"
+  SHAPE="328,192,50,57" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#otomasyon.xhtml:0" NAME="item"
+   PATH="/otomasyon.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="true" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="ara::#arama.xhtml" NAME="output1"
+    PATH="/arama.xhtml" TARGET="rules:#arama.xhtml" TITLE="ara" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#arama.xhtml" PATH="/arama.xhtml"
+  SHAPE="504,72,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#arama.xhtml:0" NAME="item"
+   PATH="/arama.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#otomasyon.xhtml" NAME="output"
+    PATH="/otomasyon.xhtml" TARGET="rules:#otomasyon.xhtml" TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

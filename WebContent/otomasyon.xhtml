@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Facelet Title</title>
+	<link href="./resources/css/default.css" rel="stylesheet"
+		type="text/css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<style>
+.ui-button {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	border-radius: .5rem;
+	border-width: 4px;
+	color: #434243;
+	background-color: #0099ff;
+	border-color: #434243;
+}
+
+.ui-state-active {
+	background-color: #198754;
+	color: #fff;
+}
+}
+</style>
+</h:head>
+<h:body style="padding:20px">
+	<div style="" class="container">
+		<h:form>
+			<div>
+				<div>
+					<!-- KULLANICI PANELI -->
+					<div style="float: left; width: 45%">
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">İsim
+									ve Soyisim</span>
+							</div>
+							<div style="float: left;">
+								<p:inputText style="width: 200px; height:38px;" type="text"
+									aria-label="First name" class="form-control" placeholder="İsim"
+									value="#{kullaniciView.kullanici.ad}" />
+							</div>
+							<div style="float: left;">
+								<p:inputText style="width: 200px; height:38px; " type="text"
+									aria-label="First name" class="form-control"
+									placeholder="Soyisim" value="#{kullaniciView.kullanici.soyad}" />
+							</div>
+						</div>
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">Cinsiyet</span>
+							</div>
+							<div style="float: left;">
+								<p:selectOneMenu id="console"
+									value="#{kullaniciView.kullanici.cinsiyet}"
+									style="width:400px; height:38px;">
+									<f:selectItem itemLabel="Seçiniz" itemValue="" />
+									<f:selectItem itemLabel="Erkek" itemValue="Erkek" />
+									<f:selectItem itemLabel="Kadin" itemValue="Kadin" />
+								</p:selectOneMenu>
+							</div>
+						</div>
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">Telefon</span>
+							</div>
+							<div style="float: left;">
+								<p:inputMask class="form-control"
+									style="width:400px; height:38px;" id="phone"
+									mask="(599) 999-9999"
+									value="#{kullaniciView.kullanici.telefon}" />
+							</div>
+						</div>
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">e-mail</span>
+							</div>
+							<div style="float: left;">
+								<p:inputText style="width:400px; height:38px;"
+									aria-label="First name" class="form-control" type="email"
+									id="floatingInput" placeholder="name@example.com"
+									value="#{kullaniciView.kullanici.mail}" />
+							</div>
+						</div>
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">T.C
+									No</span>
+							</div>
+							<div style="float: left;">
+								<p:inputMask class="form-control"
+									style="width:400px; height:38px;" id="TC" mask="99999999999"
+									value="#{kullaniciView.kullanici.tc}" />
+							</div>
+						</div>
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">Giris
+									Tarihi</span>
+							</div>
+							<div style="float: left;">
+								<p:inputMask class="form-control"
+									style="width:400px; height:38px;" id="GirisTarihi"
+									mask="99/99/9999"
+									value="#{kullaniciView.kullanici.girisTarihi}" />
+							</div>
+						</div>
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">Cikis
+									Tarihi</span>
+							</div>
+							<div style="float: left;">
+								<p:inputMask class="form-control"
+									style="width:400px; height:38px;" id="CikisTarihi"
+									mask="99/99/9999"
+									value="#{kullaniciView.kullanici.cikisTarihi}" />
+							</div>
+						</div>
+						<div>
+							<div style="float: left;">
+								<span style="width: 150px;" class="input-group-text">UCRET</span>
+							</div>
+							<div style="float: left;">
+								<p:inputText class="form-control"
+									style="width:400px; height:38px;" id="ucret"
+									value="#{kullaniciView.kullanici.ucret}" />
+							</div>
+						</div>
+
+					</div>
+					<div style="width: 50%" class="input-group">
+						<div>
+							<!-- ODALAR -->
+							<h:panelGrid columns="1" style="margin-bottom:auto">
+								<p:selectManyButton value="#{kullaniciView.kullanici.oda}">
+									<f:selectItem itemLabel="Oda-1" itemValue="Oda-1" />
+									<f:selectItem itemLabel="Oda-2" itemValue="Oda-2" />
+									<f:selectItem itemLabel="Oda-3" itemValue="Oda-3" />
+									<f:selectItem itemLabel="Oda-4" itemValue="Oda-4" />
+									<f:selectItem itemLabel="Oda-5" itemValue="Oda-5" />
+									<f:selectItem itemLabel="Oda-6" itemValue="Oda-6" />
+									<f:selectItem itemLabel="Oda-7" itemValue="Oda-7" />
+									<f:selectItem itemLabel="Oda-8" itemValue="Oda-8" />
+									<f:selectItem itemLabel="Oda-9" itemValue="Oda-9" />
+									<f:selectItem itemLabel="Oda-10" itemValue="Oda-10" />
+									<f:selectItem itemLabel="Oda-11" itemValue="Oda-11" />
+									<f:selectItem itemLabel="Oda-12" itemValue="Oda-12" />
+									<f:selectItem itemLabel="Oda-13" itemValue="Oda-13" />
+									<f:selectItem itemLabel="Oda-14" itemValue="Oda-14" />
+									<f:selectItem itemLabel="Oda-15" itemValue="Oda-15" />
+									<f:selectItem itemLabel="Oda-16" itemValue="Oda-16" />
+									<f:selectItem itemLabel="Oda-17" itemValue="Oda-17" />
+									<f:selectItem itemLabel="Oda-18" itemValue="Oda-18" />
+
+								</p:selectManyButton>
+							</h:panelGrid>
+						</div>
+					</div>
+					<div class="input-group" style="padding: 5px; float: left;">
+						<div>
+							<div>
+								<h:commandButton style="margin:3px;"
+									styleClass="btn btn-primary" action="#{kullaniciView.kaydet()}"
+									value="KAYDET" />
+
+							</div>
+						</div>
+						<div>
+							<div>
+								<h:commandButton style="margin:3px;"
+									styleClass="btn btn-warning"
+									action="#{kullaniciView.guncelle()}" value="GUNCELLE" />
+
+							</div>
+						</div>
+						<div style="float: right;">
+							<div>
+								<h:commandButton style="margin:3px;" styleClass="btn btn-danger"
+									action="#{kullaniciGirisView.Cikis()}" value="ÇIKIŞ" />
+							</div>
+						</div>
+					</div>
+					<div class="input-group" style="padding: 5px; float: right;">
+						<div style="float: right;">
+							<div style="float: left;">
+								<p:inputText style="width: 200px; height:38px;" type="text"
+									aria-label="First name" class="form-control" placeholder="İsim"
+									value="#{kullaniciView.ad}" />
+							</div>
+							<div style="float: left;">
+								<p:inputText style="width: 200px; height:38px; " type="text"
+									aria-label="First name" class="form-control"
+									placeholder="Soyisim" value="#{kullaniciView.soyad}" />
+							</div>
+						</div>
+						<div style="float: right;">
+							<h:commandButton style="" action="#{kullaniciView.arama()}"
+								styleClass="btn btn-danger" value="ARA" />
+						</div>
+					</div>
+				</div>
+
+				<!-- TABLOLAR -->
+				<h:dataTable styleClass="table" value="#{kullaniciView.listele()}"
+					var="sn">
+					<f:facet name="header">Kayit Listesi</f:facet>
+					<p:column>
+						<f:facet name="header">Sil</f:facet>
+						<!-- <h:commandButton styleClass="btn btn-danger" action="#{kullaniciView.sil()}" value="x" /> -->
+						<h:commandButton styleClass="btn btn-danger" value="Sil"
+							action="#{kullaniciView.sil()}">
+							<f:setPropertyActionListener value="#{sn}"
+								target="#{kullaniciView.kullanici}" />
+						</h:commandButton>
+					</p:column>
+					<p:column>
+						<f:facet name="header">Guncelle</f:facet>
+						<h:commandButton styleClass="btn btn-warning" value="Guncelle">
+							<f:setPropertyActionListener value="#{sn}"
+								target="#{kullaniciView.kullanici}" />
+						</h:commandButton>
+
+					</p:column>
+					<p:column>
+						<f:facet name="header">AD</f:facet>
+						<h:outputText value="#{sn.ad}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">SOYAD</f:facet>
+						<h:outputText value="#{sn.soyad}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">CINSIYET</f:facet>
+						<h:outputText value="#{sn.cinsiyet}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">TEL</f:facet>
+						<h:outputText value="#{sn.telefon}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">MAIL</f:facet>
+						<h:outputText value="#{sn.mail}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">T.C</f:facet>
+						<h:outputText value="#{sn.tc}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">GIRIS TARIHI</f:facet>
+						<h:outputText value="#{sn.girisTarihi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">CIKIS TARIHI</f:facet>
+						<h:outputText value="#{sn.cikisTarihi}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">ODA</f:facet>
+						<h:outputText value="#{kullaniciView.convert(sn.oda)}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">UCRET</f:facet>
+						<h:outputText value="#{sn.ucret}" />
+					</p:column>
+				</h:dataTable>
+
+			</div>
+		</h:form>
+	</div>
+</h:body>
+
+</html>

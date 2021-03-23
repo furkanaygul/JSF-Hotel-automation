@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Kullanici Giris</title>
+	<link href="./resources/css/default.css" rel="stylesheet"
+		type="text/css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<style>
+.bg {
+	background-image: url(#{request.contextPath}/resources/images/login.jpg);
+}
+</style>
+</h:head>
+<h:body styleClass="bg">
+	<div style="padding: 10%" class="container">
+		<h:form>
+			<div align="center">
+				<div></div>
+				<div class="" style="width: 400px;">
+					<p:panel>
+						<f:facet name="header">OTOMASYON GİRİŞ</f:facet>
+						<h:panelGrid columns="2" style="margin:5px;">
+							<span class="input-group-text" id="inputGroup-sizing-default">Kullanıcı
+								Adı</span>
+							<h:inputText class="form-control"
+								value="#{kullaniciGirisView.kullaniciGiris.kullaniciAdi}" />
+							<span class="input-group-text" id="inputGroup-sizing-default">Şifre</span>
+							<h:inputSecret class="form-control"
+								value="#{kullaniciGirisView.kullaniciGiris.sifre}" />
+
+						</h:panelGrid>
+						<h:commandButton styleClass="btn btn-primary"
+							action="#{kullaniciGirisView.giris()}" value="GİRİS" />
+					</p:panel>
+				</div>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>
